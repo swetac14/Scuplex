@@ -70,6 +70,7 @@
     <Content Include="Images\background.jpg" />
     <Content Include="PigGame.html" />
     <Content Include="Scripts\PigGame.js" />
+    <Content Include="Scripts\Player.js" />
     <Content Include="Styles\Style.css" />
     <Content Include="Web.config" />
   </ItemGroup>

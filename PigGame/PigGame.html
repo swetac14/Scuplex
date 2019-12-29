@@ -12,9 +12,9 @@
         <!--<h1>The Game of Pig</h1>-->
         <table>
             <tr>
-                <th><div id="Player1">Player 1 <i id="P1active" class="fa fa-circle" style="display:none;font-size:24px;color:red"></i></div></th>
+                <th><div id="Player1">Player 1 <i id="P1active" class="fa fa-circle" style="display:none;font-size:18px;color:red"></i></div></th>
                 <th></th>
-                <th><div id="Player2">Player 2 <i id="P2active" class="fa fa-circle" style="display:none;font-size:24px;color:red"></i></div></th>
+                <th><div id="Player2">Player 2 <i id="P2active" class="fa fa-circle" style="display:none;font-size:18px;color:red"></i></div></th>
             </tr>
             <tr>
                 <td><div id="Score1" class="score">0</div></td>
@@ -25,10 +25,19 @@
 
             <tr>
                 <td><i id="P1trophy" class="fa fa-trophy" style="display:none;font-size:80px;color:goldenrod"></i></td>
-                <td>
-                    <i id="awsDice" class='fas fa-dice-two' style='display:none;font-size:100px;color:red'></i>
-                </td>
+                <td><button id="btnRoll"><i class='fas fa-dice' title="Roll the Dice." style='font-size:48px;color:darkgreen'></i></button></td>
                 <td><i id="P2trophy" class="fa fa-trophy" style="display:none;font-size:80px;color:goldenrod"></i></td>
+            </tr>
+            <tr>
+                <td>
+                    <i id="awsDice1" class='fas fa-dice-two' style='display:none;font-size:100px;color:red'></i>
+                </td>
+                <td>
+                    <button id="btnPass"><i class="fa fa-exchange" title="Lock the score and pass chance." style="font-size:48px;color:darkgreen"></i></button>
+                </td>
+                <td>
+                    <i id="awsDice2" class='fas fa-dice-two' style='display:none;font-size:100px;color:red'></i>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -38,6 +47,7 @@
                     </div>
                 </td>
                 <td>
+                    <button id="btnReset"><i class="fa fa-refresh" title="Restart the game." style="font-size: 48px;color: darkgreen"></i></button>
                 </td>
                 <td>
                     <div class="turnTotal">
@@ -47,17 +57,7 @@
                 </td>
             </tr>
 
-            <tr class="menu">
-                <td><button id="btnRoll"><i class='fas fa-dice' title="Roll the Dice." style='font-size:48px;color:darkgreen'></i></button></td>
-                <td><button id="btnPass"><i class="fa fa-exchange" title="Lock the score and pass chance." style="font-size:48px;color:darkgreen"></i></button></td>
-
-                <td>
-                    <button id="btnReset">
-                        <i class="fa fa-refresh" title="Restart the game." style="        font-size: 48px;
-        color: darkgreen"></i>
-                    </button>
-                </td>
-            </tr>
+            
         </table>
     </div>
 

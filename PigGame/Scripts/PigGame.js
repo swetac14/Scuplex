@@ -9,8 +9,8 @@ function rollDice() {
 
         var ranDigit = Math.floor(Math.random() * 6) + 1;
 
-        document.getElementById('awsDice').style.display = "block";
-        document.getElementById('awsDice').className = `fas fa-dice-${numText[ranDigit - 1]}`;
+        document.getElementById(`awsDice${currentPlayer}`).style.display = "block";
+        document.getElementById(`awsDice${currentPlayer}`).className = `fas fa-dice-${numText[ranDigit - 1]}`;
 
         if (ranDigit !== 1) {
             //Add dice number to turntotal
@@ -29,7 +29,7 @@ function passTurn() {
         document.getElementById(`Score${currentPlayer}`).textContent = latestScore;
         if (latestScore > 100) {
             document.getElementById(`P${currentPlayer}trophy`).style.display = "block";
-            document.getElementById('awsDice').style.display = "none";
+            document.getElementById(`awsDice${currentPlayer}`).style.display = "none";
             gameOn = false;
         }
         else
@@ -39,15 +39,16 @@ function passTurn() {
 
 
 function reset() {
-    //alert("in reset");
+   // alert("in reset");
     init();
 }
 
 function nextPlayer() {
     turnTotal = 0;
     document.getElementById("turnTotal1").textContent = 0;
-    document.getElementById("turnTotal1").textContent = 0;
-    document.getElementById('awsDice').style.display = "none";
+    document.getElementById("turnTotal2").textContent = 0;
+    document.getElementById('awsDice1').style.display = "none";
+    document.getElementById('awsDice2').style.display = "none";
     document.getElementById(`P${currentPlayer}active`).style.display = "none";
     currentPlayer = currentPlayer < countOfPlayers ? ++currentPlayer : 1;
     document.getElementById(`P${currentPlayer}active`).style.display = "block";
@@ -69,6 +70,10 @@ function init() {
     document.getElementById('P2active').style.display = "none";
     document.getElementById('P1trophy').style.display = "none";
     document.getElementById('P2trophy').style.display = "none";
+    document.getElementById("turnTotal1").textContent = 0;
+    document.getElementById("turnTotal2").textContent = 0;
+    document.getElementById("Score1").textContent = 0;
+    document.getElementById("Score2").textContent = 0;
     document.getElementById("btnRoll").addEventListener("click", rollDice);
     document.getElementById("btnPass").addEventListener("click", passTurn);
     document.getElementById("btnReset").addEventListener("click", reset);

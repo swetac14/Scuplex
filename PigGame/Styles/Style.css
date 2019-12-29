@@ -30,7 +30,7 @@ body {
 
 
 #container {
-    width: 900px;
+    width: 990px;
     text-align: center;
     height: 650px;
     margin: auto;
@@ -44,7 +44,7 @@ tr{
 }
 
 th {
-    width: 300px;
+    width: 330px;
     font-size: 40px;
     text-align: center;
     font-family: serif;

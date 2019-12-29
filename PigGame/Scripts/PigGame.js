@@ -6,19 +6,26 @@ init();
 
 function rollDice() {
     if (gameOn) {
+        var tempScore = parseInt(document.getElementById(`Score${currentPlayer}`).textContent);
+        var tempTurnTotal = parseInt(document.getElementById(`turnTotal${currentPlayer}`).textContent);
+        if (tempScore + tempTurnTotal <= 100) {
+            var ranDigit = Math.floor(Math.random() * 6) + 1;
 
-        var ranDigit = Math.floor(Math.random() * 6) + 1;
+            document.getElementById(`awsDice${currentPlayer}`).style.display = "block";
+            document.getElementById(`awsDice${currentPlayer}`).className = `fas fa-dice-${numText[ranDigit - 1]}`;
 
-        document.getElementById(`awsDice${currentPlayer}`).style.display = "block";
-        document.getElementById(`awsDice${currentPlayer}`).className = `fas fa-dice-${numText[ranDigit - 1]}`;
-
-        if (ranDigit !== 1) {
-            //Add dice number to turntotal
-            turnTotal += ranDigit;
-            document.getElementById(`turnTotal${currentPlayer}`).textContent = turnTotal;
-        } else {
-            nextPlayer();
+            if (ranDigit !== 1) {
+                //Add dice number to turntotal
+                turnTotal += ranDigit;
+                document.getElementById(`turnTotal${currentPlayer}`).textContent = turnTotal;
+            } else {
+                nextPlayer();
+            }
         }
+        else {
+            passTurn();
+        }
+            
     }
 }
 
@@ -27,7 +34,7 @@ function passTurn() {
         players[currentPlayer - 1].score += turnTotal;
         var latestScore = players[currentPlayer - 1].score;
         document.getElementById(`Score${currentPlayer}`).textContent = latestScore;
-        if (latestScore > 100) {
+        if (latestScore >= 100) {
             document.getElementById(`P${currentPlayer}trophy`).style.display = "block";
             document.getElementById(`awsDice${currentPlayer}`).style.display = "none";
             gameOn = false;

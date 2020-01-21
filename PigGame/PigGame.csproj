@@ -67,11 +67,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FlipFlop.html" />
     <Content Include="Images\background.jpg" />
+    <Content Include="Images\pokemon1.gif" />
+    <Content Include="Images\pokemon2.gif" />
+    <Content Include="Images\pokemon3.gif" />
+    <Content Include="Images\pokemon4.gif" />
+    <Content Include="Images\pokemon5.gif" />
+    <Content Include="Images\pokemon6.gif" />
+    <Content Include="Images\pokemon7.gif" />
+    <Content Include="Images\pokemon8.gif" />
+    <Content Include="Images\pokemon9.gif" />
+    <Content Include="Images\pokemonBack.jpg" />
+    <Content Include="Images\Snakes Template.png" />
+    <Content Include="Images\TicTacToe.jpg" />
     <Content Include="PigGame.html" />
+    <Content Include="Scripts\FlipFlop.js" />
     <Content Include="Scripts\PigGame.js" />
-    <Content Include="Scripts\Player.js" />
+    <Content Include="Scripts\Controllers.js" />
+    <Content Include="Scripts\SnakeLadder.js" />
+    <Content Include="Scripts\TicTacToe.js" />
+    <Content Include="SnakeLadder.html" />
+    <Content Include="Styles\GameStyles.css" />
     <Content Include="Styles\Style.css" />
+    <Content Include="TicTacToe.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

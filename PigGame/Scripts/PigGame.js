@@ -1,4 +1,13 @@
-﻿// var score, turnTotal, currentPlayer, gameOn;
+﻿/*
+GAME RULES:
+- The game has 2 players, playing in rounds
+- In each turn, a player rolls a dice as many times as he whishes. Each result get added to his ROUND score
+- BUT, if the player rolls a 1, all his ROUND score gets lost. After that, it's the next player's turn
+- The player can choose to 'Hold', which means that his ROUND score gets added to his GLBAL score. 
+After that, it's the next player's turn
+- The first player to reach 100 points on GLOBAL score wins the game
+*/
+
 var score, turnTotal, currentPlayer, gameOn, numText, countOfPlayers, players;
 
 //Initialize the variables
@@ -8,7 +17,7 @@ function rollDice() {
     if (gameOn) {
         var tempScore = parseInt(document.getElementById(`Score${currentPlayer}`).textContent);
         var tempTurnTotal = parseInt(document.getElementById(`turnTotal${currentPlayer}`).textContent);
-        if (tempScore + tempTurnTotal <= 100) {
+        if (tempScore + tempTurnTotal < 20) {
             var ranDigit = Math.floor(Math.random() * 6) + 1;
 
             document.getElementById(`awsDice${currentPlayer}`).style.display = "block";
@@ -18,8 +27,13 @@ function rollDice() {
                 //Add dice number to turntotal
                 turnTotal += ranDigit;
                 document.getElementById(`turnTotal${currentPlayer}`).textContent = turnTotal;
-            } else {
-                nextPlayer();
+            } else {              
+                document.getElementById("message").textContent = "Oops! You rolled a One. Next Player's chance.";
+
+                var wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+                Promise.resolve(3000).then(() => wait(1000)).then(() => { nextPlayer(); });
+                
+                //nextPlayer();
             }
         }
         else {
@@ -29,12 +43,14 @@ function rollDice() {
     }
 }
 
+
 function passTurn() {
     if (gameOn) {
         players[currentPlayer - 1].score += turnTotal;
         var latestScore = players[currentPlayer - 1].score;
         document.getElementById(`Score${currentPlayer}`).textContent = latestScore;
-        if (latestScore >= 100) {
+        if (latestScore >= 20) {
+            document.getElementById("message").textContent = `We have a winner! Congratulations Player${currentPlayer}.`;
             document.getElementById(`P${currentPlayer}trophy`).style.display = "block";
             document.getElementById(`awsDice${currentPlayer}`).style.display = "none";
             gameOn = false;
@@ -52,6 +68,7 @@ function reset() {
 
 function nextPlayer() {
     turnTotal = 0;
+    document.getElementById("message").textContent = "";
     document.getElementById("turnTotal1").textContent = 0;
     document.getElementById("turnTotal2").textContent = 0;
     document.getElementById('awsDice1').style.display = "none";
@@ -77,6 +94,7 @@ function init() {
     document.getElementById('P2active').style.display = "none";
     document.getElementById('P1trophy').style.display = "none";
     document.getElementById('P2trophy').style.display = "none";
+    document.getElementById("message").textContent = "";
     document.getElementById("turnTotal1").textContent = 0;
     document.getElementById("turnTotal2").textContent = 0;
     document.getElementById("Score1").textContent = 0;

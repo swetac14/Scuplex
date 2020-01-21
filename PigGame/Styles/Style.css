@@ -5,8 +5,10 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    
+    box-sizing: border-box;    
+}
+html{
+    min-height: 100vh;
 }
 
 body {
@@ -20,7 +22,7 @@ body {
     color: #555;
 }
 
-#container h1 {
+.container h1 {
     text-align: center;
     margin-bottom: 50px;
     position: absolute;
@@ -29,7 +31,7 @@ body {
 }
 
 
-#container {
+.container {
     width: 990px;
     text-align: center;
     height: 650px;
@@ -121,4 +123,41 @@ button {
 }
 
 
+.containerTTC {
+    height: 650px;
+    width: 650px;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+    background-color: khaki;
+}
 
+
+#C0, #C1, #C2, #C3, #C4, #C5{
+    border-bottom: 5px solid black;
+}
+
+#C0, #C1, #C3, #C4, #C6, #C7 {
+    border-right: 5px solid black;
+}
+
+.divTable {
+    height: 320px;
+    width: 320px;
+    margin: auto;
+    padding-top:30px
+}
+
+
+.option {
+    color: black;
+    font-size: 30px;
+    text-align: center;
+    font-family: serif;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    position: relative;
+    padding-top: 20px;
+}

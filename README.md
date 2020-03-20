@@ -1,3 +1,5 @@
+This application has four games : PigGame, Tic-Tac-Toe, Pokemon Memory Game, and Snake & ladder
+
 # PigGame
 Technology stack:  HTML, CSS and JavaScript. Used template literal, font Awesome toolkit to add some zing to the code.
 
